@@ -1,0 +1,16 @@
+# Terraform working files and state (state can contain secrets)
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# Real environment settings (only commit .example versions)
+terraform/envs/*/backend.hcl
+terraform/envs/*/*.tfvars
+
+# Node.js dependencies (reinstalled with npm install)
+node_modules/
+
+# Secrets and system files
+.env
+.DS_Store
