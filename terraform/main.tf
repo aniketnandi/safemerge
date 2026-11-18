@@ -16,3 +16,8 @@ data "aws_iam_role" "lab" {
 
 data "aws_caller_identity" "me" {}
 
+
+module "queues" {
+  source = "./modules/queues"
+  prefix = local.prefix
+}
