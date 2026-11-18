@@ -14,3 +14,4 @@ node_modules/
 # Secrets and system files
 .env
 .DS_Store
+*~

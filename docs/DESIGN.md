@@ -21,6 +21,8 @@ SafeMerge is a security platform for software teams that use AI coding assistant
 | Cognito | Blocked | GitHub OAuth login with an API Gateway Lambda authorizer |
 | Step Functions starting Fargate | Not yet tested | Fallback: Lambda starts the task, EventBridge task-stopped event triggers the verdict |
 | Session credentials | Expire every few hours | Refresh GitHub Actions secrets each session |
+| S3 bucket creation in Terraform | Blocked (object lock read is denied) | Create buckets with a CLI script, then manage their settings in Terraform |
+| Lab resets | Can delete everything in the account | Every resource must be in Terraform or a script, so it can be rebuilt |
 
 Region: us-east-1.
 
@@ -84,10 +86,11 @@ Fingerprint = hash of rule ID + file path + normalized code line, without the li
 - Build images with `--platform linux/amd64`.
 - Each person tests in their own Learner Lab account with their own Terraform state. Only Srujan applies to production.
 - After testing, stop tasks or run `terraform destroy`, then end the lab session.
+- Buckets are created with CLI scripts in the repo (see `terraform/bootstrap/create-state-bucket.sh`).
 
 ## Definition of done
 1. Tested in your own Learner Lab account
-2. All AWS resources are in Terraform
+2. All AWS resources are in Terraform, or in a script in the repo for S3 buckets
 3. Pull request reviewed by the area steward and merged
 4. Applied to production by Srujan
 5. This file updated if an interface changed
