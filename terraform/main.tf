@@ -26,3 +26,9 @@ module "data" {
   source = "./modules/data"
   prefix = local.prefix
 }
+
+module "reports" {
+  source     = "./modules/reports"
+  prefix     = local.prefix
+  account_id = data.aws_caller_identity.me.account_id
+}

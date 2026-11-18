@@ -25,3 +25,7 @@ output "scans_table" {
 output "findings_table" {
   value = module.data.findings_table
 }
+
+output "reports_bucket" {
+  value = module.reports.bucket_name
+}
