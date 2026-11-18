@@ -37,3 +37,7 @@ output "github_token_secret_arn" {
 output "webhook_secret_arn" {
   value = module.secrets.webhook_secret_arn
 }
+
+output "ecr_repository_urls" {
+  value = module.ecr.repository_urls
+}

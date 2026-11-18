@@ -36,3 +36,8 @@ module "reports" {
 module "secrets" {
   source = "./modules/secrets"
 }
+
+module "ecr" {
+  source       = "./modules/ecr"
+  repositories = ["demo-api", "safemerge-sast", "safemerge-pentest"]
+}
