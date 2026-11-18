@@ -13,3 +13,15 @@ output "scan_jobs_queue_url" {
 output "scan_jobs_dlq_url" {
   value = module.queues.scan_jobs_dlq_url
 }
+
+output "repos_table" {
+  value = module.data.repos_table
+}
+
+output "scans_table" {
+  value = module.data.scans_table
+}
+
+output "findings_table" {
+  value = module.data.findings_table
+}

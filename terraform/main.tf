@@ -21,3 +21,8 @@ module "queues" {
   source = "./modules/queues"
   prefix = local.prefix
 }
+
+module "data" {
+  source = "./modules/data"
+  prefix = local.prefix
+}
