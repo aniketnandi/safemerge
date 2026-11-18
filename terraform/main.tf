@@ -32,3 +32,7 @@ module "reports" {
   prefix     = local.prefix
   account_id = data.aws_caller_identity.me.account_id
 }
+
+module "secrets" {
+  source = "./modules/secrets"
+}

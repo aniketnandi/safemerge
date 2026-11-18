@@ -29,3 +29,11 @@ output "findings_table" {
 output "reports_bucket" {
   value = module.reports.bucket_name
 }
+
+output "github_token_secret_arn" {
+  value = module.secrets.github_token_arn
+}
+
+output "webhook_secret_arn" {
+  value = module.secrets.webhook_secret_arn
+}
