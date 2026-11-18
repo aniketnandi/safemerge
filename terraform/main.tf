@@ -41,3 +41,10 @@ module "ecr" {
   source       = "./modules/ecr"
   repositories = ["demo-api", "safemerge-sast", "safemerge-pentest"]
 }
+
+module "ecs" {
+  source       = "./modules/ecs"
+  prefix       = local.prefix
+  lab_role_arn = data.aws_iam_role.lab.arn
+  demo_image   = "${module.ecr.repository_urls["demo-api"]}:${var.demo_image_tag}"
+}

@@ -41,3 +41,23 @@ output "webhook_secret_arn" {
 output "ecr_repository_urls" {
   value = module.ecr.repository_urls
 }
+
+output "ecs_cluster" {
+  value = module.ecs.cluster_name
+}
+
+output "public_subnet_ids" {
+  value = module.ecs.subnet_ids
+}
+
+output "staging_sg_id" {
+  value = module.ecs.staging_sg_id
+}
+
+output "pentest_sg_id" {
+  value = module.ecs.pentest_sg_id
+}
+
+output "staging_task_definition_arn" {
+  value = module.ecs.staging_task_definition_arn
+}
