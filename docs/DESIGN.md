@@ -55,7 +55,7 @@ Changes need the owner's approval and an update to this file in the same pull re
 
 ### Notifier input (owner: Shahana)
 ```json
-{ "repo": "safemerge-cs6620/safemerge-demo-api", "sha": "abc123", "context": "safemerge/sast",
+{ "repo": "safemerge-cs6620/safemerge-demo-api", "pr": 42, "sha": "abc123", "context": "safemerge/sast",
   "state": "failure", "description": "2 new HIGH, 1 fixed",
   "targetUrl": "https://<dashboard>/scans/<scanId>",
   "comments": [{ "path": "src/app.js", "line": 12, "body": "Hardcoded secret" }] }
